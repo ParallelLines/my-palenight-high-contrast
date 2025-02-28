@@ -1,0 +1,21 @@
+{
+  "name": "my-palenight-high-contrast",
+  "displayName": "My Palenight High Contrast",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "My Palenight High Contrast",
+        "uiTheme": "vs-dark",
+        "path": "./themes/my-palenight-high-contrast-color-theme.json"
+      }
+    ]
+  }
+}
