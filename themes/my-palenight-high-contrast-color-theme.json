@@ -18,7 +18,7 @@
 		"editor.findRangeHighlightBackground": "#6d6aa377",
 		"editor.findRangeHighlightBorder": "#66638e77",
 		"editor.lineHighlightBackground": "#00000050",
-		"editor.selectionBackground": "#676E95",
+		"editor.selectionBackground": "#55617299",
 		"editor.inactiveSelectionBackground": "#676E9560",
 		"editor.selectionHighlightBackground": "#676E9530",
 		"editor.wordHighlightBackground": "#464B5D50",
@@ -72,10 +72,12 @@
 			}
 		},
 		{
-			"name": "Variables",
+			"name": "Variables & Args",
 			"scope": [
 				"variable",
-				"string constant.other.placeholder"
+				"string constant.other.placeholder",
+				"variable.parameter.function", // Function arguments
+				"meta.function.parameter" // Covers more cases in function definitions
 			],
 			"settings": {
 				"foreground": "#adb2cf"
@@ -103,7 +105,8 @@
 		{
 			"name": "Keyword",
 			"scope": [
-				"keyword"
+				"keyword.control",
+				"keyword.function" // Function keywords
 			],
 			"settings": {
 				"foreground": "#C792EA"
@@ -116,13 +119,12 @@
 				"storage.modifier"
 			],
 			"settings": {
-				"foreground": "#FFCB6B"
+				"foreground": "#C792EA"
 			}
 		},
 		{
 			"name": "Operator, Misc",
 			"scope": [
-				"keyword.control",
 				"constant.other.color",
 				"punctuation",
 				"meta.tag",
@@ -132,11 +134,42 @@
 				"punctuation.definition.tag.begin.html",
 				"punctuation.definition.tag.end.html",
 				"punctuation.section.embedded",
+				"punctuation.section.block",
+				"punctuation.definition.block", // { }
+				"punctuation.definition.parameters", // ( )
+				"meta.brace.round", // Extra scope for ( )
+				"meta.brace.curly", // Extra scope for { }
+				"punctuation.definition.template-expression", // ${} in template strings
+				"punctuation.separator.comma", // ,
+				"punctuation.terminator.statement", // ;
+				"punctuation.separator.key-value", // :
+				"keyword.control.return",
+				"keyword.control.flow",
+				"keyword.operator.arithmetic",
+				"keyword.operator.comparison",
+				"keyword.operator.relational",
+				"keyword.operator.logical", // &&, ||, !
+				"keyword.operator.assignment", // =, +=, -=, etc.
+				"keyword.operator.increment", // Covers ++
+				"keyword.operator.decrement", // Covers --
+				"keyword.control.loop", // 'for', 'while', 'do'
+				"keyword.control.conditional", // 'if', 'else', 'switch', 'case'
 				"keyword.other.template",
 				"keyword.other.substitution"
 			],
 			"settings": {
 				"foreground": "#89DDFF"
+			}
+		},
+		{
+			"name": "Argument Braces & Conditional Braces",
+			"scope": [
+				"punctuation.definition.parameters",
+				"punctuation.definition.condition", // ( ) in if, for, while
+				"punctuation.section.block" // { } in if, for, while, functions
+			],
+			"settings": {
+				"foreground": "#F07178"
 			}
 		},
 		{
@@ -183,14 +216,13 @@
 			}
 		},
 		{
-			"name": "Number, Constant, Function Argument, Tag Attribute, Embedded",
+			"name": "Number, Constant, Tag Attribute, Embedded",
 			"scope": [
 				"constant.numeric",
 				"constant.language",
 				"support.constant",
 				"constant.character",
 				"constant.escape",
-				"variable.parameter",
 				"keyword.other.unit",
 				"keyword.other"
 			],
