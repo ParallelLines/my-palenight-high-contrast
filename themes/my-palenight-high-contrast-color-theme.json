@@ -137,21 +137,14 @@
 				"punctuation.section.block",
 				"punctuation.definition.block", // { }
 				"punctuation.definition.parameters", // ( )
-				"meta.brace.round", // Extra scope for ( )
-				"meta.brace.curly", // Extra scope for { }
+				"meta.brace",
 				"punctuation.definition.template-expression", // ${} in template strings
 				"punctuation.separator.comma", // ,
 				"punctuation.terminator.statement", // ;
 				"punctuation.separator.key-value", // :
+				"keyword.operator",
 				"keyword.control.return",
 				"keyword.control.flow",
-				"keyword.operator.arithmetic",
-				"keyword.operator.comparison",
-				"keyword.operator.relational",
-				"keyword.operator.logical", // &&, ||, !
-				"keyword.operator.assignment", // =, +=, -=, etc.
-				"keyword.operator.increment", // Covers ++
-				"keyword.operator.decrement", // Covers --
 				"keyword.control.loop", // 'for', 'while', 'do'
 				"keyword.control.conditional", // 'if', 'else', 'switch', 'case'
 				"keyword.other.template",
@@ -170,6 +163,18 @@
 			],
 			"settings": {
 				"foreground": "#F07178"
+			}
+		},
+		{
+			"name": "Array Brackets",
+			"scope": [
+				"punctuation.definition.array.begin",
+				"punctuation.definition.array.end",
+				"meta.array.literal.js meta.brace.square.js"
+			],
+			"settings": {
+				// "foreground": "#A6D2C5"
+				"foreground": "#FFCC00"
 			}
 		},
 		{
@@ -194,6 +199,17 @@
 			],
 			"settings": {
 				"foreground": "#82AAFF"
+			}
+		},
+		{
+			"name": "Object Property & Array Literal",
+			"scope": [
+				"support.variable.property.js",
+				"variable.other.property.js",
+				"meta.array.literal.js variable.other"
+			],
+			"settings": {
+				"foreground": "#A6D2C5"
 			}
 		},
 		{
@@ -623,15 +639,15 @@
 				"fontStyle": "italic"
 			}
 		},
-		{
-			"name": "Markdown - Link",
-			"scope": [
-				"string.other.link.title.markdown"
-			],
-			"settings": {
-				"foreground": "#82AAFF"
-			}
-		},
+		// {
+		// 	"name": "Markdown - Link",
+		// 	"scope": [
+		// 		"string.other.link.title.markdown"
+		// 	],
+		// 	"settings": {
+		// 		"foreground": "#82AAFF"
+		// 	}
+		// },
 		{
 			"name": "Markdown - Link Description",
 			"scope": [
